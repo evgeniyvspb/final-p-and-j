@@ -4,9 +4,9 @@ from metods import create_note, read_note, update_note, delete_note, print_all
 def menu_notes(full_name: str):
         print('Меню справочника: 1- Add note, 2 - Read, 3 - Update, 4 - Delete 5 - Print All')
         while True:    
-                num = int(input("Введите желаемую операцию:   "))
+                try: num = int(input("Введите желаемую операцию:   "))
+                except: print('Неверный ввод номера действия. Возможно повезёт в следующий раз')
                 if num!=1 and num!=2 and num!=3 and num!=4 and num!=5 and num!=6 and num!=7:
-                        print('Неверный ввод номера действия. Возможно повезёт в следующий раз')
                         break
                 if num==1:
                         create_note(full_name)
